@@ -1,18 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"
+		integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous">
+		</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
+		integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous">
+		</script>
+
+	<script type="template-x" class="colorTemplate">
+
+		{{#each colors}}
+		<ul>
+           <li>{{this}}</li>
+		</ul>
+		{{/each}}
+
+	</script>
+
+	<script type="template-x" class="brandTemplate">
+
+		{{#each brands}}
+			<ul>
+		     <li>{{this}}</li>
+			</ul>
+		{{/each}}
+		
+	</script>
+
+	<script type="template-x" class="carTemplate">
+		
+		      {{#each cars}}
+					<ul>
+					   <li>
+						  <div>Make:{{this.make}}<div>
+					      <div>Model:{{this.model}}<div>
+						  <div>Price:{{this.price}}<div>
+						  <div>Color:{{this.color}}<div>
+						  <di>Registration:{{this.reg_number}}<di>
+						</li>
+					</ul>
+		      {{/each}}
+						
+	</script>
 </head>
+
 <body>
 
 	<h1>Car info</h1>
 
 	<h2>Colors</h2>
-	<div class="colors" >
+	<div class="colors">
 
 	</div>
 
@@ -26,4 +72,8 @@
 
 	</div>
 </body>
+
+<script src="app.js"></script>
+
+
 </html>

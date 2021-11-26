@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,60 @@
 	<title>Filter widget</title>
 	<link rel="stylesheet" href="style.css">
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"
+		integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous">
+		</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
+		integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous">
+		</script>
+
+	<script type="template-x" class="carTemplate">
+
+	      {{#each cars}}
+					<ul>
+						<li>
+							Model:{{this.model}}
+							Registration:{{this.reg_number}}
+						</li>
+					</ul>
+		 {{/each}}
+    </script>
 </head>
+
+
 <body>
+
 	<h1>Filter widget</h1>
+	<label for="cars">Brands</label>
+	<select name="color" class="thebrand" id="brands">
+		<option value="">Select a brand</option>
+		<option value="Toyota">Toyota</option>
+		<option value="Nissan">Nissan</option>
+		<option value="Ford">Ford</option>
+		<option value="Volkswagen">Volkswagen</option>
+	</select><br>
+	<br>
+
+	<label for="cars">Color</label>
+	<select name="color" class="colors" id="colors">
+		<option value="">Select a color</option>
+		<option value="Blue">Blue</option>
+		<option value="Red">Red</option>
+		<option value="Orange">Orange</option>
+		<option value="White">White</option>
+		<option value="Grey">Grey</option>
+	</select><br>
+	<br>
+
+	<button type="submit" class="btn">display</button>
+
+	<h2>List of cars for the selected color & or brand</h2>
+	<div class="brands">
+
+	</div>
+
 </body>
+
+<script src="filter.js"></script>
+
 </html>
